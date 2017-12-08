@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='./jquery-1.8.3.min.js'></script>
+	<style>
+		ul,li{
+			margin:0px;
+			padding:0px;
+		}
+		ul{
+			list-style:none;
+		}
+		li{
+			width:50px;
+			height:25px;
+			float:left;
+			background-color: #ddd;
+			margin-right: 5px;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li name='File_201.jpg'>戴耳机</li>
+		<li name='File_205.jpg'>布条的</li>
+		<li name='File_208.jpg'>两个人</li>
+		<li name='File_206.jpg'>侧身的</li>
+	</ul>
+	<div id='did'></div>
+</body>
+<script>
+	$('li').hover(function(){
+		$(this).css('background-color', '#fc0');
+		var pic = $(this).attr('name');
+		$('#did').load('2.php', {name:pic});
+	},function(){
+		$(this).css('background-color', '#ddd');
+	});
+</script>
+</html>
